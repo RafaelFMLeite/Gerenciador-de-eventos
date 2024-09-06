@@ -61,7 +61,7 @@ class ConvidadoController extends Controller
             return redirect()->route('convidados.index')->with('error', 'Convidado não encontrado!');
         }
 
-        $convidado->delete();
+        $convidado = Convidado::destroy($convidado->id);
 
         return redirect()->route('convidados.index')->with('success', 'Convidado excluído com sucesso!');
     }
