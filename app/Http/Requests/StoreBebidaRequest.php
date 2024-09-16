@@ -6,6 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreBebidaRequest extends FormRequest
 {
+
+    
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -23,7 +25,7 @@ class StoreBebidaRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'string', 'max:255'],
-            'quantidade_litros' => ['required'],
+            'quantidade_litros' => ['required', 'numeric', 'min:1'],
         ];
     }
 }

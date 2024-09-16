@@ -11,7 +11,7 @@ class UpdateBebidaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,7 @@ class UpdateBebidaRequest extends FormRequest
     {
         return [
             'nome' => ['nullable', 'string', 'max:255'],
-            'quantidade_litros' => 'nullable',
+            'quantidade_litros' => ['nullable','numeric', 'min:1'],
         ];
     }
 }
