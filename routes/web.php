@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ConvidadoController;
+use App\Http\Controllers\ComidaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,6 +21,9 @@ Route::middleware('auth')->group(function () {
 
     // Rotas de convidados utilizando Route::resource
     Route::resource('convidados', ConvidadoController::class);
+
+    // Rotas de comidas utilizando Route::resource
+    Route::resource('comidas', ComidaController::class);
 });
 
 require __DIR__.'/auth.php';

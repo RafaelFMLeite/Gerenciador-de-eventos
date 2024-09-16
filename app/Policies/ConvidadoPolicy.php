@@ -21,8 +21,5 @@ class ConvidadoPolicy
     {
         return $user->id === $convidado->user_id;
     }
-    public function __construct()
-    {
-        //
-    }
+
 }

@@ -1,24 +1,24 @@
-@extends('convidado.layouts.app')
+@extends('comida.layouts.app')
 
 @section('content')
 
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="text-primary">Lista de Convidados</h2>
-        <a href="{{ route('convidados.create') }}" class="btn btn-success">Adicionar Convidado</a>
+        <h2 class="text-primary">Lista de Comidas</h2>
+        <a href="{{ route('comidas.create') }}" class="btn btn-success">Adicionar Comida</a>
     </div>
 
     <div class="card shadow-sm">
         <div class="card-body">
-            @if ($convidados->isEmpty())
-                <p class="text-center">Nenhum convidado cadastrado ainda.</p>
+            @if ($comidas->isEmpty())
+                <p class="text-center">Nenhuma comida foi cadastrada ainda.</p>
             @else
                 <table class="table table-hover align-middle text-center">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Quantidade KG</th>
+                            <th scope="col">Descrição</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
@@ -27,9 +27,9 @@
                             <tr>
                                 <th scope="row">{{ $comida->id }}</th>
                                 <td>{{ $comida->nome }}</td>
-                                <td>{{ $comida->quantidade }}</td>
+                                <td>{{ $comida->descricao }}</td>
                                 <td>
-                                    <a href="{{ route('comidas.show', $comida) }}" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="{{ route('comidas.edit', $comida) }}" class="btn btn-warning btn-sm">Editar</a>
 
                                     <form action="{{ route('comidas.destroy', $comida) }}" method="POST" class="d-inline-block">
                                         @csrf
