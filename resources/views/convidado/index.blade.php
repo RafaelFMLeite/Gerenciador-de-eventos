@@ -18,23 +18,23 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Quantidade KG</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($comidas as $comida)
+                        @foreach ($convidados as $convidado)
                             <tr>
-                                <th scope="row">{{ $comida->id }}</th>
-                                <td>{{ $comida->nome }}</td>
-                                <td>{{ $comida->quantidade }}</td>
+                                <th scope="row">{{ $convidado->id }}</th>
+                                <td>{{ $convidado->nome }}</td>
+                                <td>{{ $convidado->email }}</td>
                                 <td>
-                                    <a href="{{ route('comidas.show', $comida) }}" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="{{ route('convidados.show', $convidado) }}" class="btn btn-warning btn-sm">Editar</a>
 
-                                    <form action="{{ route('comidas.destroy', $comida) }}" method="POST" class="d-inline-block">
+                                    <form action="{{ route('convidados.destroy', $convidado) }}" method="POST" class="d-inline-block">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir esta comida?')">Excluir</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este convidado?')">Excluir</button>
                                     </form>
                                 </td>
                             </tr>
