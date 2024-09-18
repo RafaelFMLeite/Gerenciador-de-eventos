@@ -42,4 +42,6 @@ class LocalController extends Controller
     public function show(Local $local){
         return view('local.show', compact('local'));
     }
+
+    
 }

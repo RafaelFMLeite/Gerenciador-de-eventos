@@ -7,6 +7,10 @@ use Illuminate\Validation\Rule;
 
 class StoreConvidadoRequest extends FormRequest
 {
+    public function authorize(): bool
+    {
+        return true;
+    }
     public function rules(): array
     {
         return [
